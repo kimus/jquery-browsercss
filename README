@@ -1,0 +1,39 @@
+Browser CSS jQuery Plugin
+-------------------------
+
+
+Overview
+--------
+
+A jQuery plugin that makes making cross browser CSS rules easier by adding browser information to the page or element.
+
+	
+
+Usage
+-----
+
+$('html').browsercss();
+
+
+Internet Explorer 8 in Windows will make the HTML element like this:
+<html class="win ie ie8">
+
+Firefox in GNU/Linux will make the HTML element like this:
+<html class="linux firefox firefox6">
+
+
+so, now we can create CSS rules like:
+.ie #someelem 
+{
+    color: red;
+}
+
+.ie7 #someelem 
+{
+    color: blue;
+}
+
+.linux.firefox #someelem 
+{
+    color: black;
+}
