@@ -29,6 +29,17 @@
 				css.push("mac");
 			if (/linux/.test(ua))
 				css.push("linux");
+
+			if (/android/.test(ua))
+				css.push("android mobile");
+			if (/blackberry/.test(ua))
+				css.push("blackberry mobile");
+			if (/iphone|ipad|ipod/.test(ua))
+				css.push("ios mobile");
+			if (/opera mini/.test(ua))
+				css.push("opera mobile");
+			if (/iemobile/.test(ua))
+				css.push("win mobile");
 		}
 		
 		// browser name and version
@@ -41,6 +52,9 @@
 			n = "safari";
 		if ($.browser.opera)
 			n = "opera";
+		if (/chrom(e|ium)/.test(ua))
+			n = "chrome";
+
 		css.push(n);
 		css.push(n + ver);
 
