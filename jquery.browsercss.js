@@ -5,9 +5,11 @@
 		if (engine == undefined) engine = false;
 		if (platform == undefined) platform = false;
 
-		var css = [];
-		var ver = $.browser.version.split(".")[0];
 		var ua = navigator.userAgent.toLowerCase();
+		var version = (ua.match( /.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/ ) || [0,'0'])[1];
+		var css = [];
+		var ver = version.split(".")[0];
+		
 		
 		// engine name
 		if (engine)
@@ -44,13 +46,13 @@
 		
 		// browser name and version
 		var n;
-		if ($.browser.msie)
+		if (/msie/.test(ua) && !/opera/.test(ua))
 			n = "ie";
-		if ($.browser.mozilla)
+		if (/mozilla/.test(ua) && !/(compatible|webkit)/.test(ua))
 			n = /firefox/.test(ua) ? "firefox" : "mozilla";
-		if ($.browser.safari)
+		if (/webkit/.test(ua))
 			n = "safari";
-		if ($.browser.opera)
+		if (/opera/.test(ua))
 			n = "opera";
 		if (/chrom(e|ium)/.test(ua))
 			n = "chrome";
