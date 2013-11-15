@@ -32,12 +32,19 @@
 			if (/linux/.test(ua))
 				css.push("linux");
 
-			if (/android/.test(ua))
+			if (/android/.test(ua) && /mobile/.test(ua))
 				css.push("android mobile");
+			else if (/android/.test(ua))
+				css.push("android tablet");
+
 			if (/blackberry/.test(ua))
 				css.push("blackberry mobile");
-			if (/iphone|ipad|ipod/.test(ua))
+
+			if (/iphone|ipod/.test(ua))
 				css.push("ios mobile");
+			if (/ipad/.test(ua))
+				css.push("ios tablet");
+
 			if (/opera mini/.test(ua))
 				css.push("opera mobile");
 			if (/iemobile/.test(ua))
